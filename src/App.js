@@ -11,24 +11,21 @@ import { ContactPage, FirmPage, SplashPage, TeamPage } from "./views";
 function App() {
   return (
     <div className="App">
+      <Router>
       <header className="App-header">
         <h1>Header</h1>
-      </header>
-      <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
+        <nav class="nav-link-container">
+
+              <Link to="/" class="nav-link"><h1>Home</h1></Link>
+
+              <Link to="/firm" class="nav-link"><h1>Firm</h1></Link>
+
+              <Link to="/team" class="nav-link"><h1>Team</h1></Link>
+
+              <Link to="/contact" class="nav-link"><h1>Contact</h1></Link>
+
         </nav>
+      </header>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -46,7 +43,6 @@ function App() {
             <SplashPage />
           </Route>
         </Switch>
-      </div>
     </Router>
     </div>
   );
