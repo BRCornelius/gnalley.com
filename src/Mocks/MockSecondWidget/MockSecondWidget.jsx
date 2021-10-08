@@ -1,6 +1,6 @@
 import React from 'react';
-import {CarouselComponent} from '../../components';
+import {CarouselComponent as Carousel} from '../../components';
 
 export const MockSecondWidget = () => <div className="container">
-    <CarouselComponent />
+    <Carousel />
 </div>
