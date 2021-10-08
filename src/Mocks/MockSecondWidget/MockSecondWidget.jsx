@@ -6,6 +6,9 @@ import './MockSecondWidget.css';
 export const MockSecondWidget = () => {
     const initialRef = useRef(null);
     return <Widget>
+        <div className="second-container-label">
+            <h1>Meet our Team</h1>
+        </div>
         <div className="second-container">
             <Rerousel itemRef={initialRef} interval={1500} stop={false}>
                 <img alt="first" src="http://placekitten.com/200/300" ref={initialRef} />
