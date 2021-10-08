@@ -1,0 +1,14 @@
+.container {
+    align-items: center;
+    background-color: greenyellow;
+    border: 2px solid purple;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+.first-widget {
+    background-color: green;
+    height: 90%;
+    width: 90%;
+}

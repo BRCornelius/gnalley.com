@@ -14,15 +14,15 @@ function App() {
       <Router>
       <header className="App-header">
         <h1>Header</h1>
-        <nav class="nav-link-container">
+        <nav className="nav-link-container">
 
-              <Link to="/" class="nav-link"><h1>Home</h1></Link>
+              <Link to="/" className="nav-link"><h1>Home</h1></Link>
 
-              <Link to="/firm" class="nav-link"><h1>Firm</h1></Link>
+              <Link to="/firm" className="nav-link"><h1>Firm</h1></Link>
 
-              <Link to="/team" class="nav-link"><h1>Team</h1></Link>
+              <Link to="/team" className="nav-link"><h1>Team</h1></Link>
 
-              <Link to="/contact" class="nav-link"><h1>Contact</h1></Link>
+              <Link to="/contact" className="nav-link"><h1>Contact</h1></Link>
 
         </nav>
       </header>

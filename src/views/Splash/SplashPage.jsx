@@ -1,6 +1,7 @@
 import React from 'react';
+import { MockFirstWidget } from '../../Mocks';
 import './SplashPage.css';
 
 export const SplashPage = () => <div>
-    <h1>Splash Page</h1>
+    <MockFirstWidget />
 </div>;
