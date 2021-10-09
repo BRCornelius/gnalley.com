@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wedge } from '../../components';
-import './MockContactWedge.css';
+import './MockContactWidget.css';
 
-export const MockContactWedge = () => <Wedge>
+export const MockContactWidget = () => <Wedge>
     <></>
 </Wedge>

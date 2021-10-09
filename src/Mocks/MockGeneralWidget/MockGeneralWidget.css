@@ -1,13 +1,14 @@
-.first-container {
+.general-container {
     align-items: center;
     background-color: greenyellow;
     border: 2px solid purple;
     display: flex;
+    flex-direction: column;
     height: 100%;
     justify-content: center;
     width: 100%;
 }
-.first-Widget {
+.general-widget {
     background-color: green;
     height: 90%;
     width: 90%;
