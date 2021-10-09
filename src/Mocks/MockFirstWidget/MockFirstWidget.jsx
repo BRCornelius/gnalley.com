@@ -1,9 +1,9 @@
 import React from 'react';
-import { Widget } from '../../components';
+import { Wedge } from '../../components';
 import './MockFirstWidget.css';
 
-export const MockFirstWidget = () => <Widget>
+export const MockFirstWidget = () => <Wedge>
         <div className="first-container">
-            <h1 className="first-widget">The first widget</h1>
+            <h1 className="first-Widget">The first Wedge</h1>
         </div>
-    </Widget>
+    </Wedge>

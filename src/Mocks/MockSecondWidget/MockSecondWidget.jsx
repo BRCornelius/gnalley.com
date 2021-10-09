@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { Rerousel } from 'rerousel';
-import {Widget} from '../../components';
+import {Wedge} from '../../components';
 import './MockSecondWidget.css';
 
 export const MockSecondWidget = () => {
     const initialRef = useRef(null);
-    return <Widget>
+    return <Wedge>
         <div className="second-container-label">
             <h1>Meet our Team</h1>
         </div>
@@ -17,5 +17,5 @@ export const MockSecondWidget = () => {
                 <img alt="fourth" src="http://placekitten.com/200/300" />
             </Rerousel>
         </div>
-    </Widget>
+    </Wedge>
 }
