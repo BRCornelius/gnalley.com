@@ -1,0 +1,8 @@
+.column-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.two-input-container {
+    display: inline-flex;
+}
