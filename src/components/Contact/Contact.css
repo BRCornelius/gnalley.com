@@ -1,8 +1,76 @@
-.column-one {
+.active {
+    background-color: chartreuse;
+}
+.inactive {
+    background-color: cornsilk;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+
+input {
+    line-height: 2rem;
+}
+
+button {
+    font-size: 1.25rem;
+}
+
+.button-container {
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding-left: 0.5rem;
+    width: 50%;
+}
+
+.button-label {
+    width: 50%;
+}
+
+.column {
     display: flex;
     flex-direction: column;
+    width: 50%;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem 0;
+    height: 100%;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+.radio-input-container {
+    display: inline-flex;
+    padding-left: 0.5rem;
+    padding-top: 00.5rem;
 }
 
 .two-input-container {
     display: inline-flex;
+}
+
+.overarch-contact-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-message {
+    line-height: 10rem;
+}
+
+.input-message-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
 }
