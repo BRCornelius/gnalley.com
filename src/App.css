@@ -16,3 +16,11 @@
   color: white;
   text-decoration: none;
 }
+
+.App {
+  background-color: peru;
+}
+
+.single-page-container {
+  height: 81.2vh;
+}
