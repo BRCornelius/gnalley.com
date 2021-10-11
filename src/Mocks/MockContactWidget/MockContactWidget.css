@@ -1,10 +1,8 @@
 .contact-container {
     align-items: center;
     background-color: peru;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: center;
     padding: 8rem 2rem;
     width: 100%;

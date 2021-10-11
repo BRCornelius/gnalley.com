@@ -1,16 +1,15 @@
 .carousel-container {
     align-items: center;
-    border: 2px solid black;
+    background-color: peru;
     display: flex;
-    height: 100%;
     justify-content: center;
     width: 100%;
 }
 
 .carousel-container-label {
-    background-color: hotpink;
+    background-color: #d4c22b;
     color: white;
-    opacity: 50%;
+    opacity: 75%;
     position: absolute;
     width: 35%;
     z-index: 999999999;

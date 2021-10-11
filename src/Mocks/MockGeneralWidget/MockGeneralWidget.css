@@ -1,7 +1,6 @@
 .general-container {
     align-items: center;
-    background-color: greenyellow;
-    border: 2px solid purple;
+    background-color: peru;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -9,7 +8,7 @@
     width: 100%;
 }
 .general-widget {
-    background-color: green;
+    background-color: peachpuff;
     height: 90%;
     width: 90%;
 }

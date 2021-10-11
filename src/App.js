@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import { Footer } from "./components";
 import { ContactPage, FirmPage, SplashPage, TeamPage } from "./views";
 
 function App() {
@@ -15,34 +16,29 @@ function App() {
       <header className="App-header">
         <h1>Header</h1>
         <nav className="nav-link-container">
-
-              <Link to="/" className="nav-link"><h1>Home</h1></Link>
-
-              <Link to="/firm" className="nav-link"><h1>Firm</h1></Link>
-
-              <Link to="/team" className="nav-link"><h1>Team</h1></Link>
-
-              <Link to="/contact" className="nav-link"><h1>Contact</h1></Link>
-
+          <Link to="/" className="nav-link"><h1>Home</h1></Link>
+          <Link to="/firm" className="nav-link"><h1>Firm</h1></Link>
+          <Link to="/team" className="nav-link"><h1>Team</h1></Link>
+          <Link to="/contact" className="nav-link"><h1>Contact</h1></Link>
         </nav>
       </header>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/contact">
-            <ContactPage />
-          </Route>
-          <Route path="/team">
-            <TeamPage />
-          </Route>
-          <Route path="/firm">
-            <FirmPage />
-          </Route>
-          <Route path="/">
-            <SplashPage />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route path="/contact">
+          <ContactPage />
+        </Route>
+        <Route path="/team">
+          <TeamPage />
+        </Route>
+        <Route path="/firm">
+          <FirmPage />
+        </Route>
+        <Route path="/">
+          <SplashPage />
+        </Route>
+      </Switch>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
     </div>
   );

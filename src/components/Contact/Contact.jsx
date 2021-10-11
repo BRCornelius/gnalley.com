@@ -44,7 +44,9 @@ export const Contact = () => {
                     <label for="message">Message:</label>
                     <textarea type="text" id="message" />
                 </div>
-                <button>Submit</button>
+                <div className="submit-button-container">
+                    <button className="submit-button">Submit</button>
+                </div>
             </div>
         </div>
         <h3><button>Click Here</button> for other ways to contact us.</h3>

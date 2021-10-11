@@ -72,7 +72,6 @@ button {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding-left: 2rem;
     width: -webkit-fill-available;
 }
@@ -81,4 +80,13 @@ button {
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
+}
+
+.submit-button {
+    width: 50%;
+}
+
+.submit-button-container {
+    display: inline-flex;
+    justify-content: center;
 }
