@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Router>
       <header className="App-header">
-        <h1>Header</h1>
+        <img alt="logo" className="logo" src="http://www.gnalley.com/wp-content/uploads/2014/08/LogoTaglineBlue.png" />
         <nav className="nav-link-container">
           <Link to="/" className="nav-link"><h1>Home</h1></Link>
           <Link to="/firm" className="nav-link"><h1>Firm</h1></Link>

@@ -19,3 +19,8 @@ img {
     padding: 0 1rem;
     width: 30%;
 }
+
+.photo {
+    height: 100%;
+    width: 50%;
+}
