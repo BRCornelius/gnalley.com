@@ -1,8 +1,8 @@
 import React from 'react';
 import { Wedge } from '../../components';
-import './MockGeneralWidget.css';
+import './FirmWidget.css';
 
-export const MockGeneralWidget = () => <Wedge>
+export const FirmWidget = () => <Wedge>
     <div className="outer-container">
         <div className="general-container">
             <h1>Who we are</h1>

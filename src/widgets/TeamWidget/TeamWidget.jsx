@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Rerousel } from 'rerousel';
 import {Wedge} from '../../components';
-import './MockCarouselWidget.css';
+import './TeamWidget.css';
 
-export const MockCarouselWidget = () => {
+export const TeamWidget = () => {
     const initialRef = useRef(null);
     const history = useHistory();
     const handleClick = () => {

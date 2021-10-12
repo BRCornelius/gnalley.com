@@ -1,9 +1,9 @@
 import React from 'react';
-import { MockGeneralWidget, MockCarouselWidget, MockContactWidget } from '../../Mocks';
+import { FirmWidget, TeamWidget, ContactWidget } from '../../widgets';
 import './SplashPage.css';
 
 export const SplashPage = () => <div>
-    <MockGeneralWidget />
-    <MockCarouselWidget />
-    <MockContactWidget />
+    <FirmWidget />
+    <TeamWidget />
+    <ContactWidget />
 </div>;
