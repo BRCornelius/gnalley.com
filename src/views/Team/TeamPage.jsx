@@ -39,7 +39,7 @@ export const TeamPage = () => {
 
     const TeamMemberDisplay = ({teamMember, selected}) => <div className="team-member-display" onClick={() => setTeamMember(teamMember)}>
         <img alt="member" className="team-member-image" src={teamMember.img}/>
-        <h3>{teamMember.name}<br/><small>{teamMember.title}</small></h3>
+        <h3 className="team-member-description">{teamMember.name}<br/><small>{teamMember.title}</small></h3>
         {selected && teamMember.description}
     </div>
 

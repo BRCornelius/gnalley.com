@@ -13,12 +13,13 @@
 }
 
 .nav-link {
-  color: white;
+  color: #000035;
   text-decoration: none;
 }
 
 .App {
   background-color: peru;
+  color: #000035;
   width: 100%;
 }
 
