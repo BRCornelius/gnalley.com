@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Contact.css';
 
 const InputContainer = ({children}) => <div className="input-container">{children}</div>
@@ -11,13 +12,21 @@ export const Contact = ({isWidget}) => {
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
     const checkSelection = targetValue => targetValue === selection;
+    const history = useHistory();
+    const handleNavigation = () => {
+        history.push("/contact");
+    }
+
+    let header = isWidget
+        ? <h3>Contact Us!<br/><small>Send us an email and we will get back to you as soon as possible.</small></h3>
+        : <h1>Email us:</h1>
 
     const SubmitButton = () => <div className="submit-button-container">
         <button className="submit-button" onClick={() => {}}>Submit</button>
     </div>
 
     return <div className="overarch-contact-container">
-        <h3>Contact Us!<br/><small>Send us an email and we will get back to you as soon as possible.</small></h3>
+        {header}
         <div className="container-row">
             <div className="column">
                 <div className="two-input-container">
@@ -56,7 +65,7 @@ export const Contact = ({isWidget}) => {
                 {isWidget && <SubmitButton />}
             </div>
         </div>
-        {isWidget && <h3><button>Click Here</button> for other ways to contact us.</h3>}
+        {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
         {!isWidget && <SubmitButton />}
     </div>
 }

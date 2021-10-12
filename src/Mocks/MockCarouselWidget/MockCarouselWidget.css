@@ -8,6 +8,7 @@
 .carousel-container-label {
     background-color: #d4c22b;
     color: white;
+    cursor: pointer;
     opacity: 75%;
     position: absolute;
     width: 35%;

@@ -1,12 +1,17 @@
 import React, { useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Rerousel } from 'rerousel';
 import {Wedge} from '../../components';
 import './MockCarouselWidget.css';
 
 export const MockCarouselWidget = () => {
     const initialRef = useRef(null);
+    const history = useHistory();
+    const handleClick = () => {
+        history.push("/team");
+    }
     return <Wedge>
-        <div className="carousel-container-label">
+        <div className="carousel-container-label" onClick={handleClick}>
             <h1>Meet our Team</h1>
         </div>
         <div className="carousel-container">
