@@ -5,6 +5,10 @@
     background-color: cornsilk;
 }
 
+h3 {
+    margin: 0;
+}
+
 input {
     line-height: 1.5rem;
 }
@@ -72,7 +76,7 @@ button {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    padding-left: 0.5rem;
+    padding: 0.5rem;
     width: -webkit-fill-available;
 }
 

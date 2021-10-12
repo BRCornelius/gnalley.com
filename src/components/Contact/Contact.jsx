@@ -3,9 +3,18 @@ import './Contact.css';
 
 const InputContainer = ({children}) => <div className="input-container">{children}</div>
 
-export const Contact = () => {
+export const Contact = ({isWidget}) => {
     const [selection, setSelection] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
     const checkSelection = targetValue => targetValue === selection;
+
+    const SubmitButton = () => <div className="submit-button-container">
+        <button className="submit-button" onClick={() => {}}>Submit</button>
+    </div>
 
     return <div className="overarch-contact-container">
         <h3>Contact Us!<br/><small>Send us an email and we will get back to you as soon as possible.</small></h3>
@@ -14,21 +23,21 @@ export const Contact = () => {
                 <div className="two-input-container">
                     <InputContainer>
                         <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" />
+                        <input type="text" id="first-name" name="first-name" value={firstName} onChange={event => setFirstName(event.target.value)}/>
                     </InputContainer>
                     <InputContainer>
                         <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" />
+                        <input type="text" id="last-name" name="last-name" value={lastName} onChange={event => setLastName(event.target.value)}/>
                     </InputContainer>
                 </div>
                 <div className="two-input-container">
                     <InputContainer>
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email" />
+                        <input type="text" id="email" name="email" value={email} onChange={event => setEmail(event.target.value)}/>
                     </InputContainer>
                     <InputContainer>
                         <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" name="phone" />
+                        <input type="text" id="phone" name="phone" value={phone} onChange={event => setPhone(event.target.value)}/>
                     </InputContainer>
                 </div>
                 <div className="radio-input-container">
@@ -42,13 +51,12 @@ export const Contact = () => {
             <div className="column">
                 <div className="input-message-container">
                     <label for="message">Message:</label>
-                    <textarea type="text" id="message" />
+                    <textarea type="text" id="message" value={message} onChange={event => setMessage(event.target.value)}/>
                 </div>
-                <div className="submit-button-container">
-                    <button className="submit-button">Submit</button>
-                </div>
+                {isWidget && <SubmitButton />}
             </div>
         </div>
-        <h3><button>Click Here</button> for other ways to contact us.</h3>
+        {isWidget && <h3><button>Click Here</button> for other ways to contact us.</h3>}
+        {!isWidget && <SubmitButton />}
     </div>
 }

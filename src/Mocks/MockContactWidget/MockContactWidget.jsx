@@ -4,6 +4,6 @@ import './MockContactWidget.css';
 
 export const MockContactWidget = () => <Wedge>
     <div className="contact-container">
-        <Contact />
+        <Contact isWidget/>
     </div>
 </Wedge>
