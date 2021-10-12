@@ -3,7 +3,7 @@
     bottom: 0;
     color: white;
     display: inline-flex;
-    height: 3rem;
+    min-height: 3rem;
     justify-content: center;
     align-items: center;
     width: -webkit-fill-available;

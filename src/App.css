@@ -19,10 +19,11 @@
 
 .App {
   background-color: peru;
+  width: 100%;
 }
 
 .single-page-container {
-  height: 81.2vh;
+  min-height: 81.2vh;
 }
 
 .logo {
