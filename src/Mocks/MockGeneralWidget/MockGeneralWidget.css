@@ -2,12 +2,12 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: center;
-    width: 100%;
-}
-.general-widget {
     background-color: peachpuff;
-    height: 90%;
-    width: 90%;
+    padding: 1rem;
+}
+.outer-container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
 }

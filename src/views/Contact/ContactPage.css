@@ -1,0 +1,26 @@
+.two-columns {
+    display: inline-flex;
+    height: 34.3vh;
+    width: 100%;
+}
+
+.vertical-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.vertical-column-right {
+    border-left: 1px solid #f3e42e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.contact-page-container {
+    height: 84vh;
+  }
