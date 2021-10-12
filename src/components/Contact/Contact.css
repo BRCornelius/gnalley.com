@@ -1,8 +1,12 @@
 .active {
     background-color: chartreuse;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 .inactive {
     background-color: cornsilk;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
 h3 {
@@ -87,7 +91,10 @@ button {
 }
 
 .submit-button {
-    width: 50%;
+    background-color: chartreuse;
+    border-radius: 1rem;
+    font-weight: 800;
+    padding: 1rem;
 }
 
 .submit-button-container {

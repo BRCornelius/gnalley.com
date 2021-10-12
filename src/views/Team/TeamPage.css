@@ -11,6 +11,9 @@
     justify-content: space-evenly;
 }
 
+.team-right-column {
+    width: -webkit-fill-available;
+}
 
 .team-left-column {
     border-right: 1px solid #f3e42e;

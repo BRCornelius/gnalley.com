@@ -12,7 +12,7 @@ export const TeamWidget = () => {
     }
     return <Wedge>
         <div className="carousel-container-label" onClick={handleClick}>
-            <h1>Meet our Team</h1>
+            <h1>Meet our Team:</h1>
         </div>
         <div className="carousel-container">
             <Rerousel itemRef={initialRef} stop={false} interval={2000}>

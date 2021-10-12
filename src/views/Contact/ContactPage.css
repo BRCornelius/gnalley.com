@@ -1,25 +1,24 @@
 .two-columns {
     display: inline-flex;
+    padding-top: 2rem;
+    justify-content: space-evenly;
     width: 100%;
 }
 
 .vertical-column {
+    background-color: #ecdbad;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-}
-
-.vertical-column-right {
-    border-left: 1px solid #f3e42e;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+    padding: 3rem 2rem;
 }
 
 .contact-page-container {
     height: 84vh;
-  }
+}
+
+.contact-title {
+    margin-top: 0
+}
