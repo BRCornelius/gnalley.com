@@ -1,6 +1,8 @@
 import React from 'react';
+import { ClientsWidget, FirmWidget } from '../../widgets';
 import './FirmPage.css';
 
 export const FirmPage = () => <div className="single-page-container">
-    <h1>Firm Page</h1>
+    <FirmWidget />
+    <ClientsWidget />
 </div>;
