@@ -1,4 +1,5 @@
 .team-member-display {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,4 +40,17 @@
 .team-member-description {
     background-color: #f3e42e;
     padding: 0.5rem;
+}
+
+.team-contact-button {
+    background-color: #f3e42e;
+    padding: 1rem;
+    border-radius: 1rem;;
+}
+
+.team-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: -webkit-fill-available;
 }
