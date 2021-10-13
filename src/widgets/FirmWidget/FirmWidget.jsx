@@ -4,7 +4,7 @@ import './FirmWidget.css';
 
 export const FirmWidget = () => <Wedge>
     <div className="outer-container">
-        <h1>Who we are</h1>
+        <h1 className="firm-title">Who we are</h1>
         <div className="general-container">
             <p className="general-widget">Founded in 1990 by George Nalley, <strong>Nalley and Dew, APLC</strong> is a Louisiana law firm with a global perspective.</p>
             <p>We are litigation centered, with extensive experience in all areas of casualty litigation, including maritime, products liability, and environmental law issues, as well as state and federal workers’ compensation.</p>

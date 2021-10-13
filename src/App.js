@@ -2,25 +2,18 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
-import { Footer } from "./components";
+import { Footer, Header } from "./components";
 import { ContactPage, FirmPage, SplashPage, TeamPage } from "./views";
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <header className="App-header">
-        <img alt="logo" className="logo" src="http://www.gnalley.com/wp-content/uploads/2014/08/LogoTaglineBlue.png" />
-        <nav className="nav-link-container">
-          <Link to="/" className="nav-link"><h1>Home</h1></Link>
-          <Link to="/firm" className="nav-link"><h1>Firm</h1></Link>
-          <Link to="/team" className="nav-link"><h1>Team</h1></Link>
-          <Link to="/contact" className="nav-link"><h1>Contact</h1></Link>
-        </nav>
+      <header>
+        <Header />
       </header>
       <Switch>
         <Route path="/contact">

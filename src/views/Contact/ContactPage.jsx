@@ -2,7 +2,7 @@ import React from 'react';
 import { Contact } from '../../components';
 import './ContactPage.css';
 
-export const ContactPage = () => <div className="contact-page-container">
+export const ContactPage = () => <>
     <Contact isWidget={false}/>
     <div className="two-columns">
         <div className="vertical-column">
@@ -14,4 +14,4 @@ export const ContactPage = () => <div className="contact-page-container">
             <h3>2450 Severn Avenue<br/>Suite 100<br/>Metairie, LA 70001</h3>
         </div>
     </div>
-</div>;
+</>;

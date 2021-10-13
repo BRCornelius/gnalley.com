@@ -71,6 +71,6 @@ export const Contact = ({isWidget}) => {
             <SubmitButton />
         </>}
         {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
-        {!isWidget && <SubmitButton />}
+        {!isWidget && !isMobile && <SubmitButton />}
     </div>
 }
