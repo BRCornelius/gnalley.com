@@ -10,6 +10,10 @@
     width: 15rem;
 }
 
+.mobile-client-image {
+    width: 10rem;
+}
+
 .two-client-row {
     display: inline-flex;
     justify-content: space-between;
