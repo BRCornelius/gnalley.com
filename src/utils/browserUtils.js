@@ -1,1 +1,1 @@
-export const isMobile = () => console.log(window.screen.width)
+export const isMobile = window.screen.width <= 1007

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { isMobile } from '../../utils/browserUtils';
 import './Contact.css';
 
 export const InputContainer = ({children}) => <div className="input-container">{children}</div>
@@ -8,12 +9,16 @@ export const TextInput = ({label, stateValue, clickFunction, id}) => <InputConta
         <label for={id}>{label}</label>
         <input type="text" id={id} name={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
     </InputContainer>;
-export const RadioInput =({checkSelection, setSelection}) => <div className="radio-input-container">
+export const RadioInput = ({checkSelection, setSelection}) => <div className="radio-input-container">
         <label className="button-label">Are you a new client?</label>
         <div className="button-container">
             <button className={checkSelection("yes") ? "active" : "inactive"} onClick={() => setSelection("yes")}>Yes</button>
             <button className={checkSelection("no") ? "active" : "inactive"} onClick={() => setSelection("no")}>No</button>
         </div>
+    </div>;
+export const MessageInput = ({label, stateValue, clickFunction, id}) => <div className="input-message-container">
+        <label for={id}>{label}</label>
+        <textarea type="text" id={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
     </div>;
 
 export const Contact = ({isWidget}) => {
@@ -39,7 +44,7 @@ export const Contact = ({isWidget}) => {
 
     return <div className="overarch-contact-container">
         {header}
-        <div className="container-row">
+        {!isMobile && <div className="container-row">
             <div className="column">
                 <div className="two-input-container">
                     <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
@@ -52,13 +57,19 @@ export const Contact = ({isWidget}) => {
                 <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
             </div>
             <div className="column">
-                <div className="input-message-container">
-                    <label for="message">Message:</label>
-                    <textarea type="text" id="message" value={message} onChange={event => setMessage(event.target.value)}/>
-                </div>
+                <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
                 {isWidget && <SubmitButton />}
             </div>
-        </div>
+        </div>}
+        {isMobile && <>
+            <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
+            <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
+            <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
+            <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
+            <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
+            <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
+            <SubmitButton />
+        </>}
         {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
         {!isWidget && <SubmitButton />}
     </div>
