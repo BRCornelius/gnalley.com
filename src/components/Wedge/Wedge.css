@@ -3,3 +3,9 @@
     min-height: 60vh;
     width: 100%;
 }
+
+.mobile-wedge-container {
+    display: flex;
+    min-height: 30vh;
+    width: 100%;
+}
