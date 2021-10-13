@@ -1,0 +1,1 @@
+export const isMobile = () => console.log(window.screen.width)

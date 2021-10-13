@@ -2,7 +2,19 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Contact.css';
 
-const InputContainer = ({children}) => <div className="input-container">{children}</div>
+export const InputContainer = ({children}) => <div className="input-container">{children}</div>
+
+export const TextInput = ({label, stateValue, clickFunction, id}) => <InputContainer>
+        <label for={id}>{label}</label>
+        <input type="text" id={id} name={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
+    </InputContainer>;
+export const RadioInput =({checkSelection, setSelection}) => <div className="radio-input-container">
+        <label className="button-label">Are you a new client?</label>
+        <div className="button-container">
+            <button className={checkSelection("yes") ? "active" : "inactive"} onClick={() => setSelection("yes")}>Yes</button>
+            <button className={checkSelection("no") ? "active" : "inactive"} onClick={() => setSelection("no")}>No</button>
+        </div>
+    </div>;
 
 export const Contact = ({isWidget}) => {
     const [selection, setSelection] = useState("")
@@ -22,7 +34,7 @@ export const Contact = ({isWidget}) => {
         : <h1>Email us:</h1>
 
     const SubmitButton = () => <div className="submit-button-container">
-        <button className="submit-button" onClick={() => {}}>Submit</button>
+        <button className="submit-button" onClick={() => console.log(firstName)}>Submit</button>
     </div>
 
     return <div className="overarch-contact-container">
@@ -30,32 +42,14 @@ export const Contact = ({isWidget}) => {
         <div className="container-row">
             <div className="column">
                 <div className="two-input-container">
-                    <InputContainer>
-                        <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" value={firstName} onChange={event => setFirstName(event.target.value)}/>
-                    </InputContainer>
-                    <InputContainer>
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" value={lastName} onChange={event => setLastName(event.target.value)}/>
-                    </InputContainer>
+                    <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
+                    <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
                 </div>
                 <div className="two-input-container">
-                    <InputContainer>
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email" value={email} onChange={event => setEmail(event.target.value)}/>
-                    </InputContainer>
-                    <InputContainer>
-                        <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" name="phone" value={phone} onChange={event => setPhone(event.target.value)}/>
-                    </InputContainer>
+                    <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
+                    <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
                 </div>
-                <div className="radio-input-container">
-                    <label className="button-label">Are you a new client?</label>
-                    <div className="button-container">
-                        <button className={checkSelection("yes") ? "active" : "inactive"} onClick={() => setSelection("yes")}>Yes</button>
-                        <button className={checkSelection("no") ? "active" : "inactive"} onClick={() => setSelection("no")}>No</button>
-                    </div>
-                </div>
+                <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
             </div>
             <div className="column">
                 <div className="input-message-container">
