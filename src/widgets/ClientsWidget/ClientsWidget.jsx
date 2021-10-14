@@ -39,7 +39,7 @@ export const ClientsWidget = () => {
     const initialRef = useRef(null);
     return <Wedge>
         <div className="carousel-container-label">
-            <h1>Who we have served:</h1>
+            <h2>Who we have served:</h2>
         </div>
         <div className="carousel-container">
             <Rerousel itemRef={initialRef} stop={false} interval={3000}>

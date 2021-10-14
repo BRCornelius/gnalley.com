@@ -4,7 +4,10 @@
     display: inline-flex;
     min-height: 3rem;
     justify-content: center;
+    text-align: center;
     align-items: center;
     width: -webkit-fill-available;
     position: sticky;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
 }
