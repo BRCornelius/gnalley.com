@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { withRouter } from 'react-router-dom';
 
 export const isMobile = window.screen.width <= 1007
 
@@ -15,3 +16,18 @@ export const useOutsideClick = (ref, clickFunction) => {
         };
     }, [clickFunction, ref]);
 }
+
+const ScrollToTopFunction = ({ history }) => {
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+    return () => {
+      unlisten();
+    }
+  }, [history]);
+
+  return (null);
+}
+
+export const ScrollToTop = withRouter(ScrollToTopFunction);

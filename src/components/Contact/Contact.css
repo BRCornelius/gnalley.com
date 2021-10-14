@@ -59,9 +59,19 @@ button {
 .input-container {
     display: flex;
     flex-direction: column;
+    text-align: left;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-right: 2rem;
+    width: 100%;
+}
+
+.mobile-input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     width: 100%;
 }
 
@@ -119,4 +129,9 @@ button {
     margin-top: 1rem;
     padding: 1rem;
     border: 2px solid black;
+}
+
+.more-info-text {
+    padding-top: 0.5rem;
+    text-align: center;
 }

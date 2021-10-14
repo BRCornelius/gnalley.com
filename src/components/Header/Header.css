@@ -7,6 +7,8 @@
 
 .blank-bar {
     height: 6rem;
+    background-color: #DADADA;
+    border-bottom: 1px solid #000035;
     width: 100vw;
 }
 
@@ -47,6 +49,6 @@
   
 
 .logo {
-    padding: 0.5rem;
+    padding: 1rem;
 }
   

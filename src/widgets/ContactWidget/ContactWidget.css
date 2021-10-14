@@ -6,3 +6,12 @@
     padding: 2rem;
     width: -webkit-fill-available;
 }
+
+.mobile-contact-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    width: -webkit-fill-available;
+}

@@ -4,10 +4,10 @@ import { isMobile } from '../../utils/browserUtils';
 import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
 
-export const InputContainer = ({children}) => <div className="input-container">{children}</div>
+export const InputContainer = ({children}) => <div className={isMobile ? "mobile-input-container" : "input-container"}>{children}</div>
 
 export const TextInput = ({label, stateValue, clickFunction, id}) => <InputContainer>
-        <label for={id}>{label}</label>
+        <label>{label}</label>
         <input type="text" id={id} name={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
     </InputContainer>;
 export const RadioInput = ({checkSelection, setSelection}) => <div className="radio-input-container">
@@ -18,7 +18,7 @@ export const RadioInput = ({checkSelection, setSelection}) => <div className="ra
         </div>
     </div>;
 export const MessageInput = ({label, stateValue, clickFunction, id}) => <div className="input-message-container">
-        <label for={id}>{label}</label>
+        <label>{label}</label>
         <textarea type="text" id={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
     </div>;
 
@@ -74,7 +74,7 @@ export const Contact = ({isWidget}) => {
                 <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
                 <SubmitButton />
             </>}
-            {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
+            {isWidget && <h3 className="more-info-text"><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
             {!isWidget && !isMobile && <SubmitButton />}
         </>}
         {open && <ConfirmationModal toggleFunction={toggleConfirmationModal} /> }
