@@ -1,21 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { isMobile } from '../../utils';
+import { isMobile, useOutsideClick } from '../../utils';
 import './Header.css';
-
-const useOutsideClick = (ref, clickFunction) => {
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-                clickFunction()
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [clickFunction, ref]);
-}
 
 export const Header = () => {
     const [open, setOpen] =useState(false)

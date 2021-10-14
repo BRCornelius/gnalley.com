@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { isMobile } from '../../utils/browserUtils';
+import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
 
 export const InputContainer = ({children}) => <div className="input-container">{children}</div>
@@ -28,6 +29,8 @@ export const Contact = ({isWidget}) => {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
+    const [open, setOpen] = useState(false)
+    const toggleConfirmationModal = () => setOpen(!open)
     const checkSelection = targetValue => targetValue === selection;
     const history = useHistory();
     const handleNavigation = () => {
@@ -39,38 +42,41 @@ export const Contact = ({isWidget}) => {
         : <h1>Email us:</h1>
 
     const SubmitButton = () => <div className="submit-button-container">
-        <button className="submit-button" onClick={() => console.log(firstName)}>Submit</button>
+        <button className="submit-button" onClick={toggleConfirmationModal}>Submit</button>
     </div>
 
     return <div className="overarch-contact-container">
-        {header}
-        {!isMobile && <div className="container-row">
-            <div className="column">
-                <div className="two-input-container">
-                    <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
-                    <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
+        {!open && <>
+            {header}
+            {!isMobile && <div className="container-row">
+                <div className="column">
+                    <div className="two-input-container">
+                        <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
+                        <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
+                    </div>
+                    <div className="two-input-container">
+                        <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
+                        <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
+                    </div>
+                    <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
                 </div>
-                <div className="two-input-container">
-                    <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
-                    <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
+                <div className="column">
+                    <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
+                    {isWidget && <SubmitButton />}
                 </div>
+            </div>}
+            {isMobile && <>
+                <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
+                <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
+                <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
+                <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
                 <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
-            </div>
-            <div className="column">
                 <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
-                {isWidget && <SubmitButton />}
-            </div>
-        </div>}
-        {isMobile && <>
-            <TextInput label="First Name" stateValue={firstName} clickFunction={setFirstName} id="first-name" />
-            <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
-            <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
-            <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
-            <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
-            <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
-            <SubmitButton />
+                <SubmitButton />
+            </>}
+            {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
+            {!isWidget && !isMobile && <SubmitButton />}
         </>}
-        {isWidget && <h3><button onClick={handleNavigation}>Click Here</button> for other ways to contact us.</h3>}
-        {!isWidget && !isMobile && <SubmitButton />}
+        {open && <ConfirmationModal toggleFunction={toggleConfirmationModal} /> }
     </div>
 }
