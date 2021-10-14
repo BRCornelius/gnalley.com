@@ -26,6 +26,7 @@ export const TeamPage = () => {
 
     return <div className="single-page-container">
         {isMobile ? <>
+            <h1>Our Team</h1>
             {teamMembers.map(member => <MobileTeamMemberDisplay member={member} />)}
         </> : <>
             {!teamMember && <div className="team-page-container">

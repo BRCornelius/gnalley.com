@@ -6,7 +6,8 @@
 }
 
 .vertical-column {
-    background-color: #ecdbad;
+    background-color: #003366;
+    color: #FFFFFF;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;

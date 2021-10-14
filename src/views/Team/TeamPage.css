@@ -17,7 +17,7 @@
 }
 
 .team-left-column {
-    border-right: 1px solid #f3e42e;
+    border-right: 1px solid #003366;
     padding: 0 1rem;
     width: 25vw;
 }
@@ -38,12 +38,14 @@
 }
 
 .team-member-description {
-    background-color: #f3e42e;
+    background-color: #003366;
+    color: #ffffff;
     padding: 0.5rem;
 }
 
 .team-contact-button {
-    background-color: #f3e42e;
+    background-color: #003366;
+    color: #ffffff;
     padding: 1rem;
     border-radius: 1rem;;
 }

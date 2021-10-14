@@ -1,8 +1,8 @@
 .App {
-  background-color: peru;
+  background-color: #ebd5b3;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #000035;
-  width: 100%;
+  max-width: 100%;
 }
 
 .single-page-container {

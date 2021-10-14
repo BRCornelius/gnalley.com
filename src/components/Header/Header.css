@@ -1,6 +1,6 @@
 .nav-menu {
-    background-color: #f3e42e;
-    color: white;
+    background-color: #DADADA;
+    border: 1px solid #000035;
     display: inline-flex;
     width: 100%;
 }
@@ -11,10 +11,10 @@
 }
 
 .hamburger-menu {
-    background-color: #f3e42e;
+    background-color: #DADADA;
     padding: 1rem;
     border-radius: 50%;
-    border: 1px solid #7C3E1D;
+    border: 1px solid #000035;
     opacity: 0.5;
     position: fixed;
     top: 1rem;
@@ -23,7 +23,7 @@
 }
 
 .hamburger-open {
-    background-color: #f3e42e;
+    background-color: #DADADA;
     padding: 1rem;
     border-radius: 5%;
     position: fixed;
