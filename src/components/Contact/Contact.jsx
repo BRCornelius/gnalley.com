@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { GlobalContext } from '../../context/global-context';
 import { isMobile } from '../../utils/browserUtils';
@@ -25,11 +25,9 @@ export const MessageInput = ({label, stateValue, clickFunction, id}) => <div cla
 
 export const Contact = ({isWidget}) => {
     let {
-        email, firstName, lastName, message,
-        newClient, phone, setEmail, setFirstName, setLastName, setMessage,
-        setNewClient, setPhone
+        email, firstName, lastName, message, newClient, open, phone, setEmail,
+        setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone
       } = useContext(GlobalContext)
-    const [open, setOpen] = useState(false)
     const toggleConfirmationModal = () => setOpen(!open)
     const checkNewClient = targetValue => targetValue === newClient;
     const history = useHistory();

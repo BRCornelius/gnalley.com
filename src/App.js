@@ -11,13 +11,13 @@ function App() {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
+  const [open, setOpen] = useState(false)
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
 
   const defaultContextValues = {
-    email, firstName, lastName, message,
-    newClient, phone, setEmail, setFirstName, setLastName, setMessage,
-    setNewClient, setPhone
+    email, firstName, lastName, message, newClient, open, phone, setEmail,
+    setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone
   }
   return (
     <GlobalContext.Provider value={defaultContextValues}>
