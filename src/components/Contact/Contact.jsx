@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { GlobalContext } from '../../context/global-context';
 import { isMobile } from '../../utils/browserUtils';
 import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
@@ -23,15 +24,14 @@ export const MessageInput = ({label, stateValue, clickFunction, id}) => <div cla
     </div>;
 
 export const Contact = ({isWidget}) => {
-    const [selection, setSelection] = useState("")
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [email, setEmail] = useState("")
-    const [phone, setPhone] = useState("")
-    const [message, setMessage] = useState("")
+    let {
+        email, firstName, lastName, message,
+        newClient, phone, setEmail, setFirstName, setLastName, setMessage,
+        setNewClient, setPhone
+      } = useContext(GlobalContext)
     const [open, setOpen] = useState(false)
     const toggleConfirmationModal = () => setOpen(!open)
-    const checkSelection = targetValue => targetValue === selection;
+    const checkNewClient = targetValue => targetValue === newClient;
     const history = useHistory();
     const handleNavigation = () => {
         history.push("/contact");
@@ -58,7 +58,7 @@ export const Contact = ({isWidget}) => {
                         <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
                         <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
                     </div>
-                    <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
+                    <RadioInput checkSelection={checkNewClient} setSelection={setNewClient} />
                 </div>
                 <div className="column">
                     <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
@@ -70,7 +70,7 @@ export const Contact = ({isWidget}) => {
                 <TextInput label="Last Name" stateValue={lastName} clickFunction={setLastName} id="last-name" />
                 <TextInput label="Email" stateValue={email} clickFunction={setEmail} id="email" />
                 <TextInput label="Phone Number" stateValue={phone} clickFunction={setPhone} id="phone" />
-                <RadioInput checkSelection={checkSelection} setSelection={setSelection} />
+                <RadioInput checkSelection={checkNewClient} setSelection={setNewClient} />
                 <MessageInput label="Message" stateValue={message} clickFunction={setMessage} id="message" />
                 <SubmitButton />
             </>}
