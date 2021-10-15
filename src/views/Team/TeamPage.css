@@ -56,3 +56,12 @@
     align-items: center;
     width: -webkit-fill-available;
 }
+
+.display-name {
+    display: flex;
+    background-color: #003366;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 1rem;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { WhiteExpandIcon } from '../../assets/svgs/WhiteExpandSVG';
 import { isMobile, teamMembers } from '../../utils';
 import './TeamPage.css';
 
@@ -20,7 +21,10 @@ export const TeamPage = () => {
 
     const MobileTeamMemberDisplay = ({member}) => <div onClick={() => setTeamMember(member)}>
         <img alt="member" className="team-member-image" src={member.img}/>
-        <h3 className="team-member-description">{member.name}<br/><small>{member.title}</small></h3>
+        <div className="display-name">
+            <h3 className="team-member-description">{member.name}<br/><small>{member.title}</small></h3>
+            {!checkTeamMember(member) && <WhiteExpandIcon />}
+        </div>
         {checkTeamMember(member) && teamMember.description}
     </div>
 
