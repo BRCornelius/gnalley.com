@@ -1,10 +1,15 @@
 .splash-image {
     object-fit: contain;
-    width: 100%;
+    width: 75%;
 }
 .splash-container {
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.full-image {
+    object-fit: contain;
+    width: 100%;
 }
