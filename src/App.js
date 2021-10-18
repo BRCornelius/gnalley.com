@@ -15,8 +15,7 @@ function App() {
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
 
-  const emptyContactState = () => emptyValues([email, firstName, lastName, message, newClient, open,
-    phone, setEmail, setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone]);
+  const emptyContactState = () => emptyValues([setEmail, setFirstName, setLastName, setMessage, setNewClient, setPhone]);
 
   const defaultContextValues = {
     email, firstName, lastName, message, newClient, open, phone, setEmail,
