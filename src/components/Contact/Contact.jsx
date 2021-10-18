@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { GlobalContext } from '../../context/global-context';
-import { submitRequest } from '../../utils';
-import { isMobile } from '../../utils/browserUtils';
+import { isMobile } from '../../utils';
 import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
 
@@ -26,7 +25,7 @@ export const MessageInput = ({label, stateValue, clickFunction, id}) => <div cla
 
 export const Contact = ({isWidget}) => {
     let {
-        email, firstName, lastName, message, newClient, open, phone, setEmail,
+        email, firstName, lastName, message, newClient, open, phone, setEmail, sendEmail,
         setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone, emptyContactState
       } = useContext(GlobalContext)
     const toggleConfirmationModal = () => setOpen(!open)
@@ -37,7 +36,7 @@ export const Contact = ({isWidget}) => {
     }
     const handleSubmit = () => {
         toggleConfirmationModal();
-        submitRequest();
+        sendEmail();
         emptyContactState();
     }
 
