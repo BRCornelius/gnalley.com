@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { GlobalContext } from '../../context/global-context';
+import { submitRequest } from '../../utils';
 import { isMobile } from '../../utils/browserUtils';
 import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
@@ -26,7 +27,7 @@ export const MessageInput = ({label, stateValue, clickFunction, id}) => <div cla
 export const Contact = ({isWidget}) => {
     let {
         email, firstName, lastName, message, newClient, open, phone, setEmail,
-        setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone
+        setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone, emptyContactState
       } = useContext(GlobalContext)
     const toggleConfirmationModal = () => setOpen(!open)
     const checkNewClient = targetValue => targetValue === newClient;
@@ -34,13 +35,18 @@ export const Contact = ({isWidget}) => {
     const handleNavigation = () => {
         history.push("/contact");
     }
+    const handleSubmit = () => {
+        toggleConfirmationModal();
+        submitRequest();
+        emptyContactState();
+    }
 
     let header = isWidget
         ? <h3>Contact Us!<br/><small>Send us an email and we will get back to you as soon as possible.</small></h3>
         : <h1>Email us:</h1>
 
     const SubmitButton = () => <div className="submit-button-container">
-        <button className="submit-button" onClick={toggleConfirmationModal}>Submit</button>
+        <button className="submit-button" onClick={handleSubmit}>Submit</button>
     </div>
 
     return <div className="overarch-contact-container">

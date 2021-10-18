@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 import { Footer, Header } from "./components";
 import { GlobalContext } from "./context/global-context";
-import { ScrollToTop } from "./utils";
+import { emptyValues, ScrollToTop } from "./utils";
 import { PageView } from "./views";
 
 function App() {
@@ -15,10 +15,15 @@ function App() {
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
 
+  const emptyContactState = () => emptyValues([email, firstName, lastName, message, newClient, open,
+    phone, setEmail, setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone]);
+
   const defaultContextValues = {
     email, firstName, lastName, message, newClient, open, phone, setEmail,
-    setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone
+    setFirstName, setLastName, setMessage, setNewClient, setOpen, setPhone, emptyContactState
   }
+
+
   return (
     <GlobalContext.Provider value={defaultContextValues}>
       <div className="App">
