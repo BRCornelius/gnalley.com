@@ -42,5 +42,5 @@ export const clients = [
     {displayLabel: false, img: 'https://www.retif.com/wp-content/uploads/2019/03/Retif-Logo.png', name: 'Retif Oil & Fuel'},
     {displayLabel: false, img: 'https://www.rpmpizza.com/wp-content/uploads/2019/09/001_RPMPIzzaColor_Vert_LargeDom_est_thick.jpg', name: 'RPM Pizza, LLC'},
     {displayLabel: false, img: 'https://terminixnola.com/wp-content/uploads/2020/02/Logo125.png', name: 'Terminix Service Company, Inc'},
-    {displayLabel: false, img: 'http://www.appliedrisksolutions.com/wp-content/uploads/2018/02/ars-logo-1-250x60.png', name: 'Applied Risk Solutions'},
+    {displayLabel: false, img: 'https://assets.corneliuses.com/photos/gnalley/ARS-Inc.png', name: 'Applied Risk Solutions'},
 ];
