@@ -5,23 +5,23 @@ import { isMobile } from '../../utils';
 import { ConfirmationModal } from './ConfirmationModal';
 import './Contact.css';
 
-export const InputContainer = ({children}) => <div className={isMobile ? "mobile-input-container" : "input-container"}>{children}</div>
+export const InputContainer = ({children}) => <div className={isMobile ? "mobile-input-container" : "input-container"} data-testid="input-field">{children}</div>
 
 export const TextInput = ({label, stateValue, clickFunction, id}) => <InputContainer>
         <label>{label}</label>
         <input type="text" id={id} name={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
-    </InputContainer>;
-export const RadioInput = ({checkSelection, setSelection}) => <div className="radio-input-container">
+    </InputContainer>
+export const RadioInput = ({checkSelection, setSelection}) => <div className="radio-input-container" data-testid="input-field">
         <label className="button-label">Are you a new client?</label>
         <div className="button-container">
             <button className={checkSelection("yes") ? "active" : "inactive"} onClick={() => setSelection("yes")}>Yes</button>
             <button className={checkSelection("no") ? "active" : "inactive"} onClick={() => setSelection("no")}>No</button>
         </div>
-    </div>;
-export const MessageInput = ({label, stateValue, clickFunction, id}) => <div className="input-message-container">
+    </div>
+export const MessageInput = ({label, stateValue, clickFunction, id}) => <div className="input-message-container" data-testid="input-field">
         <label>{label}</label>
         <textarea type="text" id={id} value={stateValue} onChange={event => clickFunction(event.target.value)}/>
-    </div>;
+    </div>
 
 export const Contact = ({isWidget}) => {
     let {
