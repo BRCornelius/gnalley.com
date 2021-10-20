@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly 1`] = `
+<div>
+  <div
+    class="footer-container"
+  >
+    <h3>
+      Nalley and Dew, APLC • 2450 Severn Ave • Suite 100 • Metairie, LA 70001
+      <br />
+      Phone: (504) 838-8188 | Fax: (504) 838-0008
+    </h3>
+  </div>
+</div>
+`;
