@@ -87,6 +87,7 @@ button {
 .overarch-contact-container {
     background-color: #000035;
     border: 1px solid #ffffff;
+    box-shadow: 0.2rem 0.2rem white;
     color: #ffffff;
     display: flex;
     flex-direction: column;

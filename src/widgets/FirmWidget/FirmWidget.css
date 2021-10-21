@@ -1,6 +1,7 @@
 .general-container {
     align-items: center;
     border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem saddlebrown;
     display: flex;
     flex-direction: column;
     justify-content: center;
